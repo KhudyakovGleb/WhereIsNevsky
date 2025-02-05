@@ -1,0 +1,17 @@
+services:
+  app:
+    depends_on:
+      postgres:
+        condition: service_started
+    image: my_image:latest
+    build: .
+    ports:
+      - "8000:8000"
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "nevskiy_db"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+    ports:
+      - "5432:5432"

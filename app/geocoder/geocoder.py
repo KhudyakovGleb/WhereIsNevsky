@@ -20,7 +20,7 @@ A class providing functionality for simple geocoding and address extraction.
 
 import re
 import flair
-from utils.constants import GLOBAL_CRS
+from app.utils.constants import GLOBAL_CRS
 import geopandas as gpd
 import pandas as pd
 import pymorphy2
@@ -28,8 +28,8 @@ import torch
 import math
 from rapidfuzz import fuzz
 from nltk.stem.snowball import SnowballStemmer
-from utils.data_getter.historical_geo_data_getter import HistGeoDataGetter
-from utils.constants import (
+from app.utils.data_getter.historical_geo_data_getter import HistGeoDataGetter
+from app.utils.constants import (
     AREA_STOPWORDS,
     GROUP_STOPWORDS,
     REGEX_PATTERN,
@@ -43,14 +43,14 @@ from tqdm import tqdm
 from loguru import logger
 
 from pandarallel import pandarallel
-from geocoder.city_objects_extractor import OtherGeoObjects
-from utils.data_getter.street_getter import Streets
-from utils.data_getter.location_getter import Location
-from utils.data_getter.geo_data_getter import GeoDataGetter
-from utils.data_processing.area_matcher import AreaMatcher
-from utils.data_preprocessing.preprocessor import PreprocessorInput
-from geocoder.street_extractor import StreetExtractor
-from geocoder.word_form_matcher import WordFormFinder
+from app.geocoder.city_objects_extractor import OtherGeoObjects
+from app.utils.data_getter.street_getter import Streets
+from app.utils.data_getter.location_getter import Location
+from app.utils.data_getter.geo_data_getter import GeoDataGetter
+from app.utils.data_processing.area_matcher import AreaMatcher
+from app.utils.data_preprocessing.preprocessor import PreprocessorInput
+from app.geocoder.street_extractor import StreetExtractor
+from app.geocoder.word_form_matcher import WordFormFinder
 
 pandarallel.initialize(progress_bar=True, nb_workers=-1)
 tqdm.pandas()

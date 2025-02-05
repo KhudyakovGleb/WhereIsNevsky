@@ -5,7 +5,7 @@ from contextlib import suppress
 import osmnx as ox
 import geopandas as gpd
 import pandas as pd
-from utils.constants import (
+from app.utils.constants import (
     GLOBAL_CRS,
     GLOBAL_METRIC_CRS,
 )
@@ -15,7 +15,7 @@ import osm2geojson
 import networkx as nx
 from loguru import logger
 
-from utils.exceptions import *
+from app.utils.exceptions import *
 
 class GeoDataGetter:
     """

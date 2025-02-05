@@ -2,8 +2,8 @@ import numpy as np
 from flair.models import SequenceTagger
 from flair.data import Sentence
 from rapidfuzz import fuzz
-from utils.constants import CITY_SERVICES_NAMES
-from utils.data_preprocessing.preprocessor import PreprocessorInput
+from app.utils.constants import CITY_SERVICES_NAMES
+from app.utils.data_preprocessing.preprocessor import PreprocessorInput
 
 class City_services:
 

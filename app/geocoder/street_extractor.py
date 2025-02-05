@@ -14,8 +14,8 @@ from flair.data import Sentence
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
 
-from geocoder.text_address_extractor_by_rules import NatashaExtractor
-from utils.constants import (
+from app.geocoder.text_address_extractor_by_rules import NatashaExtractor
+from app.utils.constants import (
     START_INDEX_POSITION,
     REPLACEMENT_DICT,
     TARGET_TOPONYMS,

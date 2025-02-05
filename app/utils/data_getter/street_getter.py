@@ -4,9 +4,9 @@ import pandas as pd
 
 import warnings
 
-from utils.data_getter.geo_data_getter import GeoDataGetter as dg
-from utils.data_preprocessing import preprocessor as pp
-from utils.constants import TOPONYM_PATTERN
+from app.utils.data_getter.geo_data_getter import GeoDataGetter as dg
+from app.utils.data_preprocessing import preprocessor as pp
+from app.utils.constants import TOPONYM_PATTERN
 
 warnings.simplefilter("ignore")
 warnings.filterwarnings("ignore", category=DeprecationWarning)

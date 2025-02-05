@@ -11,7 +11,7 @@ from natasha import (
     Doc,
 )
 
-from utils.constants import (
+from app.utils.constants import (
     EXCEPTIONS_CITY_COUNTRY)
 
 

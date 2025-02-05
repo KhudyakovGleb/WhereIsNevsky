@@ -4,7 +4,7 @@ warnings.filterwarnings("ignore")
 from natasha.extractors import Match
 from natasha.extractors import Extractor
 
-from utils.data_processing.rule_for_natasha import ADDR_PART
+from app.utils.data_processing.rule_for_natasha import ADDR_PART
 
 from loguru import logger
 

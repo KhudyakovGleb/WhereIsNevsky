@@ -4,9 +4,9 @@ import pandas as pd
 from shapely.geometry import Point, Polygon, MultiPolygon
 from loguru import logger
 import pymorphy2
-from utils.constants import NUM_CITY_OBJ
-from geocoder.objects_address_extractor_by_rules import AddressExtractorExtra
-from utils.data_getter.geo_data_getter import GeoDataGetter
+from app.utils.constants import NUM_CITY_OBJ
+from app.geocoder.objects_address_extractor_by_rules import AddressExtractorExtra
+from app.utils.data_getter.geo_data_getter import GeoDataGetter
 from rapidfuzz import fuzz
 import numpy as np
 

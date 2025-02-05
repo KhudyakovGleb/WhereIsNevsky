@@ -5,8 +5,8 @@ import geopandas as gpd
 from rapidfuzz import fuzz, process
 from nltk.stem.snowball import SnowballStemmer
 from shapely.geometry import Polygon, Point, MultiPolygon
-from utils.data_getter.historical_geo_data_getter import HistGeoDataGetter
-from utils.constants import (
+from app.utils.data_getter.historical_geo_data_getter import HistGeoDataGetter
+from app.utils.constants import (
     AREA_STOPWORDS,
     GROUP_STOPWORDS,
     REGEX_PATTERN,

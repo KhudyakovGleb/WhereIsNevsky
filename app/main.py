@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException, status
+import pandas as pd
 from fastapi.responses import HTMLResponse
 from app.geocoder.geocoder import Geocoder
+from shapely.wkt import dumps
 import psycopg2
 from .schemas import ItemRequest, ItemResponse
 
@@ -54,8 +56,9 @@ def find_Nevsky(text_ent: str):
     if result.empty:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Geo not found')
     
-    location = result.iloc[0]['Location']
+    location = str(result.iloc[0]['Location'])
     geometry = result.iloc[0]['geometry']
+    geometry = dumps(geometry)
     cur.execute('''
         INSERT INTO nevskiy_db (text, location, geometry)
         VALUES (%s, %s, %s)

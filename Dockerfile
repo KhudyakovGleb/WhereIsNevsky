@@ -1,16 +1,18 @@
+
 FROM python:3.11.5
+
+RUN apt-get update && apt-get install -y curl && \
+    curl -sSL https://install.python-poetry.org | python3 - && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV PATH="/root/.local/bin:$PATH"
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir poetry
+COPY pyproject.toml poetry.lock ./
 
-COPY pyproject.toml poetry.lock /app/
+RUN poetry install --no-root 
 
-RUN poetry config virtualenvs.create true \
-    && poetry install --no-root --only main
+COPY . .
 
-COPY . /app
-
-EXPOSE 8000
-
-CMD ["fastapi", "run", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
